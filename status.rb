@@ -153,7 +153,7 @@ class StatusApp < Sinatra::Base
       if d != nil and dPrev != nil
         if d['door_open'] != dPrev['door_open']
           start = d['timestamp']
-          @lastchange = Time.parse(start + " UTC").to_i
+          @lastchange = start;
           break
         end
       end
@@ -166,8 +166,8 @@ class StatusApp < Sinatra::Base
     end
 
     json = YAML.load_file('status.yml')
-    json[:open] = @open
-    json[:lastchange] = @lastchange
+    json['state'][:open]= @open
+    json['state'][:lastchange] = @lastchange
 
     content_type 'application/json'
     jsonp json

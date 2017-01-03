@@ -31,7 +31,7 @@
   %>
     <% if d.has_key? "message" %>
     <li class="message <% if d['door_open'].to_i == 1 %>open<% else %>closed<% end %>">
-      <span class="time"><%= Time.parse(d['timestamp'] + "UTC").localtime.strftime("%Y-%m-%d %H:%M") %></span>
+      <span class="time"><%= Time.at(d['timestamp']).localtime.strftime("%Y-%m-%d %H:%M") %></span>
       <%= h d['message'] %>
     <% else %>
     <li class="status <% if d['door_open'].to_i == 1 %>open<% else %>closed<% end %>">
@@ -40,13 +40,13 @@
       <% else %>
         geschlossen
       <% end %>
-      <span class="time"><%= Time.parse(d['timestamp'] + "UTC").localtime.strftime("%Y-%m-%d %H:%M") %></span>
+      <span class="time"><%= Time.at(d['timestamp']).localtime.strftime("%Y-%m-%d %H:%M") %></span>
     <% end %>
     </li>
   <% end %>
 </ul>
 
 <footer>
-  <a href="https://github.com/MetaMeute/metameutestatus">Source Code</a> // 
+  <a href="https://github.com/MetaMeute/metameutestatus">Source Code</a> //
   <a href="<%= url('/rss') %>">RSS</a>
 </footer>

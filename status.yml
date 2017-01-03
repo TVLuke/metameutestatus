@@ -1,21 +1,23 @@
-api: "0.12"
+api: "0.13"
 space: MetaMeute
 url: https://metameute.de
-icon:
-  open: http://status.metameute.de/images/open.png
-  closed: http://status.metameute.de/images/closed.png
-address: Unversität zu Lübeck, Gebäude 62, Ratzeburger Allee 160, 23562 Lübeck, Germany
+state:
+  icon:
+    open: http://status.metameute.de/images/open.png
+    closed: http://status.metameute.de/images/closed.png
 contact:
   phone: "+494515005011"
-  ml: MetaMeute@asta.uni-luebeck.de
+  email: metameute@asta.uni-luebeck.de
+  ml: metameute@asta.uni-luebeck.de
   irc: irc://irc.oftc.net/#Metameute
 logo: http://status.metameute.de/images/logo.png
 feeds:
-  - name: blog
-    type: application/rss+xml
-    url: http://blog.metameute.de/feed/
-  - name: status
-    type: application/rss+xml
-    url: http://status.metameute.de/rss
-lat: 53.834372
-lon: 10.702268
+    blog:
+      type: application/rss+xml
+      url: http://blog.metameute.de/feed/
+issue_report_channels:
+  - email
+location:
+    lat: 53.834372
+    lon: 10.702268
+    address: Unversität zu Lübeck, Gebäude 62, Ratzeburger Allee 160, 23562 Lübeck, Germany
