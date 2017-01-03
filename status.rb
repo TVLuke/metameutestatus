@@ -153,7 +153,7 @@ class StatusApp < Sinatra::Base
       if d != nil and dPrev != nil
         if d['door_open'] != dPrev['door_open']
           start = d['timestamp']
-          @lastchange = Time.parse(start + "UTC")
+          @lastchange = Time.parse(start + "UTC").localtime.strftime("%s").to_i
           break
         end
       end
